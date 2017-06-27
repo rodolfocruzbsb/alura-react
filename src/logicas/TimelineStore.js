@@ -24,7 +24,7 @@ export default class LogicaTimeline {
         })
       };
 
-      fetch(`http://localhost:8080/api/fotos/${fotoId}/comment?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`,requestInfo)
+      fetch(`http://localhost:9090/api/fotos/${fotoId}/comment?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`,requestInfo)
         .then(response => {
           if(response.ok){
             return response.json();
@@ -40,7 +40,7 @@ export default class LogicaTimeline {
     }    
 
     like(fotoId){
-      fetch(`http://localhost:8080/api/fotos/${fotoId}/like?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`,{method:'POST'})
+      fetch(`http://localhost:9090/api/fotos/${fotoId}/like?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`,{method:'POST'})
         .then(response => {
           if(response.ok) {
             return response.json();

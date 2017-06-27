@@ -20,9 +20,9 @@ export default class Timeline extends Component {
       let urlPerfil;
 
       if(this.login === undefined) {
-        urlPerfil = `http://localhost:8080/api/fotos?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`;
+        urlPerfil = `http://localhost:9090/api/fotos?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`;
       } else {
-        urlPerfil = `http://localhost:8080/api/public/fotos/${this.login}`;
+        urlPerfil = `http://localhost:9090/api/public/fotos/${this.login}`;
       }      
       this.props.store.lista(urlPerfil);
     }
@@ -57,7 +57,7 @@ export default class Timeline extends Component {
               this.state.fotos.map(foto => <FotoItem key={foto.id} foto={foto} like={this.like.bind(this)} comenta={this.comenta.bind(this)}/>)
             }               
         </ReactCSSTransitionGroup>        
- 
+
         </div>            
         );
     }
